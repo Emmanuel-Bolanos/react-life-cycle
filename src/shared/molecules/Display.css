@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@font-face {
+  font-family: "Speedster";
+  src: url("../../fonts/SPEERG__.TTF");
+}
 
 h1 {
-  font-family: 'Faster One', cursive;
+  font-family: 'Speedster', cursive;
   color: 	#c51f5d;
   font-size: 300%;
 }
