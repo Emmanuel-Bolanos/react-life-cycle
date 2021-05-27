@@ -8,6 +8,7 @@ class ErrorBoundary extends Component {
       errInfo: null,
     };
   }
+  // Catches errors produced by any of the children (game logic and start button)
   componentDidCatch(err, errInfo) {
     this.setState({
       err: err,
@@ -15,6 +16,8 @@ class ErrorBoundary extends Component {
     });
   }
   render() {
+    // Return the error if something goes wrong
+    // else return the children
     return (
       this.state.errInfo
         ? <p> oops, {this.state.err.toString()} </p>

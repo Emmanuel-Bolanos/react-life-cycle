@@ -18,7 +18,7 @@ COMPONENTWILLUNMOUNT is called when the user uses the stop button and in this ca
 
 ### ERROR Handling
 
-A error was introduced to test the error handling cycle. In LetterWars.jsx, if the user score is less than 0, an error will be thrown. This component is wrapped by an ErrorBoundary component whose function is to handle the error with COMPONENTDIDCATCH and display the error message without affecting other sections of the page.
+A error was introduced to test the error handling cycle. In LetterWars.jsx, if the user score is less than 0, an error will be thrown. This component is wrapped by an ErrorBoundary component whose function is to handle the error with COMPONENTDIDCATCH and display the error message without affecting other sections of the page (:fire: the solution of the error is to comment the line 54 and uncomment the line 53 the error was introduce as an example for error handling :fire:).
 
 ## Instructions
 

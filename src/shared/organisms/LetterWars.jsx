@@ -8,6 +8,7 @@ const randomLetter = () => {
 };
 
 class LetterWars extends Component {
+  // init state and bind methods
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +20,7 @@ class LetterWars extends Component {
     this.randLetterInterval = this.randLetterInterval.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+  // helper function, sets up interval and updates letters
   randLetterInterval() {
     return setInterval(() => {
       const updateLetter = randomLetter();
@@ -28,6 +30,8 @@ class LetterWars extends Component {
       });
     }, 1000);
   }
+  // handler for the user input
+  // determines if the answer is correct and restarts the interval
   handleChange(e) {
     clearInterval(this.letterIntervalID);
     const success = this.state.letter === e.target.value;
@@ -37,12 +41,15 @@ class LetterWars extends Component {
     });
     this.letterIntervalID = this.randLetterInterval();
   }
+  // initialize interval
   componentDidMount() {
     this.letterIntervalID = this.randLetterInterval();
   }
+  // clear interval
   componentWillUnmount() {
     clearInterval(this.letterIntervalID);
   }
+  // update user score after userInput is detected
   componentDidUpdate(_, prevState) {
     if (prevState.userInput && !this.state.userInput) {
       // const result = Math.max(this.state.success ? this.state.score + 2 : this.state.score - 1, 0);
@@ -51,16 +58,18 @@ class LetterWars extends Component {
       this.setState({
         score: result,
       });
-      
     }
   }
   render() {
     return (
       <React.Fragment>
+        {/* display target letter */}
         <p> {this.state.letter} </p>
+        {/* hide input on user input */}
         {
           !this.state.userInput && <Input type="text" autoFocus onChange={this.handleChange} />
         }
+        {/* if there was an input, communicate result to user */}
         {
           this.state.userInput 
             ? this.state.success
@@ -68,6 +77,7 @@ class LetterWars extends Component {
               : <p> WRONG! </p>
             : ''
         }
+        {/* display score */}
         <p> Score: {this.state.score} </p>
       </React.Fragment>
     );

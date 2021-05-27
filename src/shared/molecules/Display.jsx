@@ -22,8 +22,10 @@ class Display extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* title and instructions */}
         <h1> Speed Typer </h1>
         <Instructions />
+        {/* Error handler for the game logic */}
         <ErrorBoundary>
           {
             this.state.start
@@ -34,13 +36,6 @@ class Display extends Component {
             handleClick={this.handleClick}
             start={this.state.start}
           />
-          {/* <button onClick={this.handleClick}> 
-            {
-              !this.state.start 
-                ? "LET'S GO"
-                : "STOP"
-            }
-          </button> */}
         </ErrorBoundary>
       </React.Fragment>
     );
