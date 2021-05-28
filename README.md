@@ -1,5 +1,7 @@
 # Life Cycle Component
 
+Game demo available at: https://typer.emmasandbox.com
+
 ## Component Analysis
 
 To show the MOUNT, UPDATE and UNMOUNT cycles, the class component located in LetterWars.jsx can be used has example:
