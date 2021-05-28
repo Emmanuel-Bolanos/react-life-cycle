@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Input } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const randomLetter = () => {
   // a === 97, z === 122
   const letter = 97 + Math.floor(Math.random() * 26);
   return String.fromCharCode(letter);
+};
+
+const ShowResult = ({success}) => {
+  const updateColor = success ? '#6fcb9f' : '#fb2e01';
+  const res = success ? 'CORRECT!' : 'INCORRECT!';
+  return (
+    <Typography
+      variant='h3'
+      component='p'
+      align='center'
+      style={{color:updateColor}}
+    >
+      {res}
+    </Typography>
+  )
 };
 
 class LetterWars extends Component {
@@ -64,21 +80,36 @@ class LetterWars extends Component {
     return (
       <React.Fragment>
         {/* display target letter */}
-        <p> {this.state.letter} </p>
+        <Typography 
+          variant='h3'
+          component='p'
+          align='center'
+          color='primary'
+          style={{padding:'1rem'}}
+        >
+          {this.state.letter}
+        </Typography>
         {/* hide input on user input */}
         {
-          !this.state.userInput && <Input type="text" autoFocus onChange={this.handleChange} />
+          !this.state.userInput 
+          && <Input type="text" autoFocus placeholder="JUST TYPE!" onChange={this.handleChange} />
         }
         {/* if there was an input, communicate result to user */}
         {
           this.state.userInput 
-            ? this.state.success
-              ? <p> CORRECT! </p>
-              : <p> WRONG! </p>
+            ? <ShowResult success={this.state.success} />
             : ''
         }
         {/* display score */}
-        <p> Score: {this.state.score} </p>
+        <Typography
+          variant='h4'
+          component='p'
+          align='center'
+          color='primary'
+          style={{padding:'2rem'}}
+        >
+          Score: {this.state.score}
+        </Typography>
       </React.Fragment>
     );
   }

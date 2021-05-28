@@ -1,5 +1,8 @@
-body {
-  background-color: #0bd3d3;
-  color: 	#000000;
-  text-align: center;
+@font-face {
+  font-family: "Speedster";
+  src: url("./fonts/SPEERG__.TTF");
+}
+@font-face {
+  font-family: "ViceCitySans";
+  src: url("./fonts/ViceCitySans.otf") format("opentype");
 }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import StopIcon from '@material-ui/icons/Stop';
 
 class StartButton extends Component {
   constructor(props) {
@@ -10,13 +13,23 @@ class StartButton extends Component {
   }
   render() {
     return (
-      <button onClick={this.handleClick}> 
+      <Button 
+        onClick={this.handleClick}
+        variant='contained'
+        color='primary'
+        size='large'
+        endIcon={
+          !this.props.start 
+            ? <PlayArrowIcon />
+            : <StopIcon />
+        }
+      > 
         {
           !this.props.start 
             ? "LET'S GO"
             : "STOP"
         }
-      </button>
+      </Button>
     );
   }
 };
