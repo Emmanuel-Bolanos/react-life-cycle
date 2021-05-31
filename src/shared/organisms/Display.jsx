@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Instructions from '../organisms/Instructions';
-import LetterWars from '../organisms/LetterWars';
-import StartButton from '../organisms/StartButton';
-import ErrorBoundary from '../organisms/ErrorBoundary';
+import Instructions from '../molecules/Instructions';
+import LetterWars from '../molecules/LetterWars';
+import StartButton from '../molecules/StartButton';
+import ErrorBoundary from '../molecules/ErrorBoundary';
 import { Typography, Grid } from '@material-ui/core';
 
 const Title = ({text}) =>  {

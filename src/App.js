@@ -1,4 +1,4 @@
-import Display from './shared/molecules/Display';
+import Display from './shared/organisms/Display';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
